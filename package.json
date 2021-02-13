@@ -1,0 +1,38 @@
+{
+  "name": "fuzzidex-displaytron",
+  "version": "0.1.0",
+  "description": "Logic for computing the degree of fuzzidex match participation of the extended grapheme clusters in fuzzidex query results.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xorgy/fuzzidex-displaytron.git"
+  },
+  "keywords": [
+    "search",
+    "fuzzy",
+    "search",
+    "Unicode",
+    "front-end",
+    "backend",
+    "user",
+    "interface"
+  ],
+  "author": {
+    "name": "Aaron Muir Hamilton",
+    "email": "aaron@correspondwith.me",
+    "url": "qui.suis.je"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xorgy/fuzzidex-displaytron/issues"
+  },
+  "homepage": "https://fuzzidex-displaytron.aaronhamilton.us/",
+  "type": "module",
+  "dependencies": {
+    "fuzzidex": "^0.1.0",
+    "grapheme-iterator": "^0.1.3"
+  }
+}
