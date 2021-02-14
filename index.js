@@ -39,8 +39,8 @@ const match_accum = (qg, s, depth = 6) => {
   return out;
 }
 
-export const matchspans = (qs, result_strings, depth = 6) => {
-  const qsn = qs.normalize("NFD");
+export const matchspans = (query_string, result_strings, depth = 6) => {
+  const qsn = query_string.normalize("NFD");
   const qg = mkgrams(qsn, depth);
   return result_strings.map(rs => match_accum(qg, rs, depth));
 }

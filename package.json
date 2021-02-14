@@ -1,8 +1,9 @@
 {
   "name": "fuzzidex-displaytron",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Logic for computing the degree of fuzzidex match participation of the extended grapheme clusters in fuzzidex query results.",
-  "main": "index.js",
+  "main": "fuzzidex-displaytron",
+  "files": ["index.js", "index.d.ts"],
   "scripts": {
     "test": "node test.js"
   },
