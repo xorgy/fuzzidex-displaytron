@@ -1,6 +1,6 @@
 {
   "name": "fuzzidex-displaytron",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Logic for computing the degree of fuzzidex match participation of the extended grapheme clusters in fuzzidex query results.",
   "main": "fuzzidex-displaytron",
   "files": [
