@@ -10,7 +10,7 @@ const match_accum = (qg, s, depth = 6) => {
     for (let i = 0; i < sn.length; i++)
       if (snlower.substring(i, i + gram.length) === gram)
         for (let j = 0; j < gram.length; j++)
-          acc[i + j] = 1;
+          acc[i + j] = Math.max(acc[i + j], gram.length);
 
   const graphemes_match = [];
   let b = 0;
@@ -19,7 +19,7 @@ const match_accum = (qg, s, depth = 6) => {
     let gacc = 0;
     for (let i = 0; i < gl; i++)
       gacc += acc[b + i];
-    graphemes_match.push([gr.normalize("NFC"), gacc / gl])
+    graphemes_match.push([gr, ((gacc / gl) / depth)]);
     b += gl;
   }
 
@@ -42,5 +42,11 @@ const match_accum = (qg, s, depth = 6) => {
 export const matchspans = (query_string, result_strings, depth = 6) => {
   const qsn = query_string.normalize("NFD");
   const qg = mkgrams(qsn, depth);
-  return result_strings.map(rs => match_accum(qg, rs, depth));
+  const rdepth = Math.min(qsn.length, depth);
+  return {
+    *[Symbol.iterator]() {
+      for (const rs of result_strings)
+        yield match_accum(qg, rs, rdepth);
+    }
+  };
 }
